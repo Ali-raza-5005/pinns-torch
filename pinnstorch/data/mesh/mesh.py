@@ -73,7 +73,7 @@ class MeshBase:
         """
 
         spatial_domain = np.squeeze(self.spatial_domain_mesh[:, idx : idx + 1, :], axis=-2)
-        time_domain = self.time_domain_mesh[idx]
+        time_domain = self.time_domain_mesh[:, idx]
         solution_domain = {
             solution_name: self.solution[solution_name][:, idx : idx + 1]
             for solution_name in solution_names
